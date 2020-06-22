@@ -1,0 +1,14 @@
+$TTL 907200	; 1 week 3 days 12 hours
+@                 IN SOA	ns.jer.sh. admin.jer.sh. (
+				2014071402 ; serial
+				28800      ; refresh (8 hours)
+				604800     ; retry (1 week)
+				604800     ; expire (1 week)
+				86400      ; minimum (1 day)
+				)
+			NS	ns.jer.sh.
+ 
+1			PTR	router.jer.sh.
+1                       PTR     dns.jer.sh.
+1                       PTR     dhcp.jer.sh.
+			PTR	jer.sh.

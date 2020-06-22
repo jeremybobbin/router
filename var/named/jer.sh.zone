@@ -1,0 +1,15 @@
+$ORIGIN jer.sh.
+$TTL 907200	; 1 week 3 days 12 hours
+@                IN SOA	ns.jer.sh. admin.jer.sh. (
+				2014071403 ; serial
+				28800      ; refresh (8 hours)
+				3600       ; retry (1 hour)
+				604800     ; expire (1 week)
+				38400      ; minimum (10 hours 40 minutes)
+				)
+			NS	ns
+ 
+router                  A       10.0.1.1
+ns                      A       10.0.1.1
+dns                     CNAME   ns; the name of the server we are building
+dhcp                    CNAME   ns; the name of the server we are building

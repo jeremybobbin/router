@@ -1,0 +1,10 @@
+#Interface=enp6s0
+Interface=br0
+Description="JerPlace LAN Router"
+
+Connection=bridge
+BindsToInterfaces=(enp6s0 wlp3s0 wlp4s0)
+
+IP=static
+Address=('10.0.1.1/24')
+SkipNoCarrier=yes
