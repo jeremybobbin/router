@@ -27,7 +27,7 @@ options {
     hostname none;
     server-id none;
     auth-nxdomain no;
-    //dnssec-enable no;
+    querylog yes;
 };
 
 zone "jer.sh" IN {
@@ -40,4 +40,16 @@ zone "1.0.10.in-addr.arpa" IN {
     type master;
     file "/var/named/jer.sh.rev.zone";
     allow-update { key rndc-key; };
+};
+
+logging {
+        channel query_logging {
+                file "/var/log/querylog";
+                severity debug 3;
+                print-time yes;
+        };
+ 
+        category queries {
+                query_logging;
+        };
 };
