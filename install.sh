@@ -40,14 +40,14 @@ in_subnet() {
 
 file() {
 	for src; do
-		dest="${DESTDIR}/${src%.*}"
+		dest="${DESTDIR}/${src}"
 		case $type in
-			d|dir|directory) : "${src}" | install -d ${dest} \
+			d|dir|directory) : "${src}" | install -d "${dest}" \
 				-g ${group:-'root'} -o ${owner:-'root'} -m ${mode:-'755'};;
 			f|file|*) 
 				suffix="${src##*.}"
 				[ -z "$preproc" ] && case "$suffix" in
-					m4) preproc=m4;;
+					m4) preproc=m4; dest="${DESTDIR}/${src%.*}";;
 					*) preproc=cat;;
 				esac
 				"${preproc}" "${src}" | install -D /dev/stdin ${dest} \
@@ -82,4 +82,3 @@ systemctl restart named
 owner=dhcp group=dhcp file etc/dhcpd.conf.m4
 systemctl enable dhcpd4
 systemctl restart dhcpd4
-
