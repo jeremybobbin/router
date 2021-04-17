@@ -52,7 +52,7 @@ subnet 10.0.1.0 netmask 255.255.255.0 {
 	range 10.0.1.10 10.0.1.254;
 	option subnet-mask 255.255.255.0;
 	option routers 10.0.1.1;
-	option domain-name "ns.jer.sh";
+	option domain-name "jer.sh";
 	option domain-name-servers 10.0.1.1;
 	ddns-domainname "jer.sh.";
 	ddns-rev-domainname "in-addr.arpa.";
