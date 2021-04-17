@@ -30,6 +30,8 @@ options {
     querylog yes;
 };
 
+include "/etc/rndc.key";
+
 zone "jer.sh" IN {
     type master;
     file "/var/named/jer.sh.zone";

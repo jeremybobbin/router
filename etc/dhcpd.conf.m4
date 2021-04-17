@@ -10,7 +10,12 @@ max-lease-time 7200;
 # Use this to enble / disable dynamic dns updates globally.
 ddns-updates on;
 ddns-update-style standard;
+deny client-updates;
+do-forward-updates on;
+update-conflict-detection off;
+
 authoritative;
+
 include "/etc/rndc.key";
 
 allow unknown-clients;
